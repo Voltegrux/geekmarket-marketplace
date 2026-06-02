@@ -4,7 +4,7 @@
 import demoData from "./demo/data.json";
 import type { Product, Category, PaginatedResponse, ReviewsResponse } from "@/types";
 
-export const DEMO_MODE = (process.env.NEXT_PUBLIC_DEMO_MODE ?? "").trim() === "true";
+export const DEMO_MODE = process.env.NEXT_PUBLIC_DEMO_MODE === "true";
 
 const categories = demoData.categories as unknown as Category[];
 const products = demoData.products as unknown as Product[];
