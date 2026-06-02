@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #060C14;
+  --surface: #0A1525;
+  --border: #152B45;
+  --primary: #00D68F;
+  --accent: #22D3EE;
+  --foreground: #EDF2FF;
+  --foreground-muted: #4E6E8E;
+  --warning: #F59E0B;
+  --danger: #F43F5E;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #152B45 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #152B45;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #1E3D5C;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #060C14;
+  color: #EDF2FF;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: radial-gradient(circle, #152B45 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-background font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 hover:shadow-glow active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-surface hover:bg-card-hover text-foreground border border-border font-medium px-5 py-2.5 rounded-xl transition-all duration-200 active:scale-95 cursor-pointer inline-flex items-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-surface text-foreground-muted hover:text-foreground font-medium px-4 py-2 rounded-xl transition-all duration-200 cursor-pointer;
+  }
+
+  .card {
+    @apply bg-surface rounded-2xl border border-border shadow-card hover:shadow-card-hover hover:border-primary/20 transition-all duration-300;
+  }
+
+  .input {
+    @apply w-full bg-surface border border-border rounded-xl px-4 py-2.5 text-foreground placeholder-foreground-muted focus:outline-none focus:border-primary/60 focus:ring-1 focus:ring-primary/30 transition-all duration-200;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium font-mono;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-foreground font-display;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-md border border-white/[0.06];
+  }
+
+  .tag {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-mono text-foreground-muted border border-border bg-surface;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(circle, #152B45 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
