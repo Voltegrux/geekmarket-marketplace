@@ -2,6 +2,16 @@
 
 Production-ready маркетплейс для продажи цифровых продуктов: Telegram-боты, Mini Apps, UI Kits, SaaS-стартеры, шаблоны и многое другое.
 
+**🔗 Живое демо:** **[geekmarket-marketplace.vercel.app](https://geekmarket-marketplace.vercel.app)**
+
+> ⚙️ Живая версия развёрнута на Vercel в **демо-режиме**: фронтенд работает автономно
+> на статическом снимке данных (каталог, товары, отзывы реальны), без серверной части —
+> поэтому авторизация и действия с записью на демо отключены. Полная версия со всем
+> бэкендом (FastAPI + PostgreSQL + Redis + MinIO) запускается локально одной командой
+> `docker compose up -d` — см. [Быстрый старт](#быстрый-старт).
+
+**Стек:** Next.js 15 · TypeScript · Tailwind CSS · FastAPI · SQLAlchemy 2.0 · PostgreSQL · Redis · MinIO · Docker
+
 ---
 
 ## Скриншоты интерфейса
